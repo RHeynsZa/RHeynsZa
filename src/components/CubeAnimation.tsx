@@ -1,4 +1,4 @@
-import { Dialog, DialogContent } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 
 interface CubeAnimationProps {
   open: boolean
@@ -9,6 +9,10 @@ export function CubeAnimation({ open, onOpenChange }: CubeAnimationProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-full w-screen h-screen p-0 bg-black border-none flex items-center justify-center overflow-hidden">
+        <DialogTitle className="sr-only">Animation</DialogTitle>
+        <DialogDescription className="sr-only">
+          An animated rolling cube visualization
+        </DialogDescription>
         <div className="cube-container">
           <div className="cube-box">
             <div className="cube">

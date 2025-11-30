@@ -13,17 +13,18 @@ export const projects: Project[] = [
     title: 'Utilifeed Event System',
     description:
       'Architected a scalable, Kafka-based event system to ingest live sensors for 1,000+ buildings.',
-    tags: ['Go', 'Kafka', 'Distributed Systems'],
+    tags: ['Python', 'Golang', 'gRPC', 'Kafka', 'Distributed Systems'],
     detailedContent: `
 ## Challenge
 Building a real-time event ingestion pipeline to handle sensor data from over 1,000 buildings, ensuring high throughput, fault tolerance, and horizontal scalability.
 
 ## Solution
-Designed and implemented a distributed event-driven architecture using Apache Kafka as the backbone, with microservices written in Go to process and route sensor data efficiently.
+Designed and implemented a distributed event-driven architecture using Apache Kafka as the backbone, with Python consumers and producers interfacing with a high-performance Golang data layer via gRPC.
 
 ### Key Technical Decisions
 - **Event Streaming**: Kafka topics organized by building clusters for optimal partitioning
-- **Go Microservices**: Lightweight consumers with graceful shutdown handling
+- **Python Microservices**: Event consumers and producers with graceful shutdown handling
+- **Golang Data Layer**: High-performance gRPC service for efficient data processing and routing
 - **Schema Registry**: Avro schemas for backward-compatible event evolution
 - **Observability**: Distributed tracing with OpenTelemetry and metrics dashboards in Grafana
 

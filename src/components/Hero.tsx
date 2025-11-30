@@ -70,7 +70,7 @@ export function Hero() {
             <div className="text-sm text-muted-foreground pt-4">
               <p>Based in Gothenburg, Sweden 🇸🇪</p>
               <p className="mt-1 flex items-center gap-1">
-                Senior Full-Stack Engineer @{' '}
+                Senior Full-Stack Engineer and Data Protection Officer @{' '}
                 <a
                   href="https://www.utilifeed.com"
                   target="_blank"

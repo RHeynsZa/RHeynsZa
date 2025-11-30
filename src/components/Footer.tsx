@@ -20,7 +20,7 @@ export function Footer() {
               </Button>
             </a>
             <a
-              href="https://linkedin.com/in/ruan-heyns"
+              href="https://linkedin.com/in/ruan-heyns-266249120/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"

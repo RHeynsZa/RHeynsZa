@@ -1,9 +1,8 @@
 # Hi there, I'm Ruan. 👋
-Currently, I am working as a Senior Full-Stack Engineer at [Utilifeed](https://www.utilifeed.com/).
+Currently, I am working as a Senior Full-Stack Engineer and Data Protection Officer at [Utilifeed](https://www.utilifeed.com/).
 
 ### *Senior Full-Stack Engineer*
 **Based in Gothenburg, Sweden 🇸🇪**
-
 
 I build distributed systems that handle millions of events without waking me up at 3 AM.
 

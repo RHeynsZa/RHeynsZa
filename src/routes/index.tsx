@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Hero } from '@/components/Hero'
 import { PhilosophySection } from '@/components/PhilosophySection'
+import { ForceMultiplier } from '@/components/ForceMultiplier'
 import { TechStack } from '@/components/TechStack'
 import { FeaturedProjects } from '@/components/FeaturedProjects'
 import { BlobAnimation } from '@/components/BlobAnimation'
@@ -14,6 +15,7 @@ function Index() {
     <div className="min-h-screen">
       <Hero />
       <PhilosophySection />
+      <ForceMultiplier />
       <TechStack />
       <FeaturedProjects />
       <BlobAnimation />

@@ -19,6 +19,11 @@ interface ProjectModalProps {
 export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps) {
   if (!project) return null
 
+  // Helper function to convert **bold** markdown to <strong> tags
+  const parseBold = (text: string): string => {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+  }
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
@@ -45,24 +50,18 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
                 .split('\n')
                 .map((line) => {
                   if (line.startsWith('## ')) {
-                    return `<h2>${line.slice(3)}</h2>`
+                    return `<h2>${parseBold(line.slice(3))}</h2>`
                   }
                   if (line.startsWith('### ')) {
-                    return `<h3>${line.slice(4)}</h3>`
-                  }
-                  if (line.startsWith('- **') && line.includes('**:')) {
-                    const match = line.match(/- \*\*(.*?)\*\*: (.*)/)
-                    if (match) {
-                      return `<li><strong>${match[1]}</strong>: ${match[2]}</li>`
-                    }
+                    return `<h3>${parseBold(line.slice(4))}</h3>`
                   }
                   if (line.startsWith('- ')) {
-                    return `<li>${line.slice(2)}</li>`
+                    return `<li>${parseBold(line.slice(2))}</li>`
                   }
                   if (line.trim() === '') {
                     return '<br />'
                   }
-                  return `<p>${line}</p>`
+                  return `<p>${parseBold(line)}</p>`
                 })
                 .join(''),
             }}
