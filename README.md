@@ -55,3 +55,9 @@ I am always open to discussing **System Design**, **Golang vs. Rust** (Go is bet
 
 [<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />](https://linkedin.com/in/ruan-heyns-266249120)
 [<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />](mailto:rheynsza@gmail.com)
+
+---
+
+### Deployment Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1fc1513f-52ab-451a-9643-8dd4b65cdfb8/deploy-status)](https://app.netlify.com/projects/rheynsza/deploys)

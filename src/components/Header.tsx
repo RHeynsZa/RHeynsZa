@@ -15,7 +15,7 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-bold text-xl hover:text-primary transition-colors">
           <Code2 className="h-6 w-6 text-primary" />
-          <span>RH</span>
+          <span className="text-white">rh.</span>
         </Link>
 
         <div className="flex items-center gap-6">
