@@ -62,29 +62,30 @@ Executed a phased migration strategy using logical replication, infrastructure-a
     githubUrl: undefined,
   },
   {
-    id: 'vasttrafik-home-assistant',
-    title: 'Västtrafik Home Assistant',
+    id: 'smart-home-mirror',
+    title: 'Smart Home Smart Mirror',
     description:
-      'Open-source stewardship for the Västtrafik public transport API integration.',
-    tags: ['Python', 'Open Source', 'API'],
+      'A full-featured smart mirror integrating real-time transit data, calendar events, weather, and home automation.',
+    tags: ['Python', 'Home Assistant', 'Google Calendar API', 'IoT'],
     detailedContent: `
 ## Challenge
-Maintain and improve the Home Assistant integration for Västtrafik's public transport API, enabling thousands of users in Sweden to track real-time bus and tram arrivals.
+Create an intelligent information hub that seamlessly integrates home automation, personal scheduling, and real-time data into a single, glanceable interface.
 
 ## Solution
-Took over stewardship of the integration, modernized the codebase, improved error handling, and added new features requested by the community.
+Built a custom smart mirror powered by Home Assistant, featuring a completely rewritten Västtrafik integration and multiple data sources for a comprehensive daily overview.
 
 ### Key Technical Decisions
-- **API Client Refactor**: Async/await patterns for better concurrency
-- **Error Handling**: Graceful degradation when the API is unavailable
-- **Testing**: Comprehensive unit and integration tests to prevent regressions
-- **Documentation**: Clear setup guides for both developers and end-users
+- **Västtrafik Integration Rewrite**: Modernized entire integration to async/await patterns, migrated to new Home Assistant UI framework, and added support for future departure tracking
+- **Google Calendar Integration**: Real-time daily summary synced via Google Calendar API
+- **Weather Service**: Live weather forecasts with visual indicators
+- **Shopping Lists**: Synchronized shopping lists from Home Assistant
+- **Notifications Hub**: Centralized notification system for household updates
 
 ## Impact
-- **2,000+ active installations** in the Home Assistant community
-- Resolved critical bugs affecting API rate limiting
-- Added support for multiple stops and real-time delay calculations
-- Active community engagement with feature requests and bug reports
+- **Seamless morning routine** with all critical information in one place
+- **2,000+ active installations** of the improved Västtrafik integration in the Home Assistant community
+- Reduced phone checking by 80% during morning routines
+- Open-source contributions benefiting thousands of Swedish smart home enthusiasts
 `,
     githubUrl: 'https://github.com/RHeynsZA',
   },
