@@ -1,110 +1,91 @@
-import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
-import { Github, ArrowDown, ExternalLink } from 'lucide-react'
+import { ArrowDown, Github, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+	const scrollToProjects = () => {
+		const projectsSection = document.querySelector<HTMLElement>(
+			'[data-section="projects"]',
+		);
+		if (projectsSection) {
+			projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
+	};
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
+	return (
+		<section
+			data-section="home"
+			className="relative border-b border-border/60 px-4 py-24 md:py-32"
+		>
+			<div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+				<div className="space-y-7">
+					<p className="inline-flex rounded-full border border-border/80 bg-card px-4 py-1.5 text-sm text-muted-foreground">
+						Senior Full-Stack Engineer · Gothenburg, Sweden
+					</p>
 
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+					<div className="space-y-5">
+						<h1 className="text-4xl font-semibold leading-tight tracking-tight text-balance md:text-6xl">
+							I build reliable systems and practical products teams can grow
+							with.
+						</h1>
+						<p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
+							I’m Ruan Heyns. I design distributed backends, ship type-safe
+							frontends, and help teams build habits that keep releases calm.
+						</p>
+					</div>
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('featured-projects')
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
+					<div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+						<Button size="lg" className="group" onClick={scrollToProjects}>
+							View selected work
+							<ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+						</Button>
 
-  return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      {/* Spotlight Effect */}
-      <div
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300"
-        style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(168, 85, 247, 0.15), transparent 80%)`,
-        }}
-      />
+						<a
+							href="https://github.com/RHeynsZA"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex"
+						>
+							<Button variant="outline" size="lg">
+								<Github className="mr-2 h-4 w-4" />
+								GitHub
+							</Button>
+						</a>
 
-      <div className="max-w-7xl mx-auto w-full relative z-40">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Side - Summary */}
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <div className="space-y-4">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                I'm <span className="text-foreground font-semibold">Ruan</span>. I engineer distributed
-                systems that scale and lead frontend teams that ship.
-              </p>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Currently obsessed with{' '}
-                <span className="font-mono text-accent">Type-Safety</span>,{' '}
-                <span className="font-mono text-accent">Event Streams</span>, and making the CI/CD
-                pipeline boring.
-              </p>
-            </div>
+						<a href="mailto:rheynsza@gmail.com" className="inline-flex">
+							<Button variant="ghost" size="lg">
+								<Mail className="mr-2 h-4 w-4" />
+								Contact
+							</Button>
+						</a>
+					</div>
+				</div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8 group" onClick={scrollToProjects}>
-                View Architecture
-                <ArrowDown className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
-              </Button>
-
-              <a
-                href="https://github.com/RHeynsZA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex"
-              >
-                <Button variant="outline" size="lg" className="text-lg px-8 group">
-                  <Github className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
-                  Read the Code
-                </Button>
-              </a>
-            </div>
-
-            <div className="text-sm text-muted-foreground pt-4">
-              <p>Based in Gothenburg, Sweden 🇸🇪</p>
-              <p className="mt-1 flex items-center gap-1">
-                Senior Full-Stack Engineer and Data Protection Officer @{' '}
-                <a
-                  href="https://www.utilifeed.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-colors font-medium"
-                >
-                  Utilifeed
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Right Side - Title */}
-          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
-              Distributed
-              <br />
-              Systems.
-            </h1>
-            <h2 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
-              Reactive
-              <br />
-              Frontends.
-            </h2>
-            <h2 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
-              <span className="bg-gradient-to-r from-primary via-purple-400 to-primary bg-clip-text text-transparent">
-                Zero Fluff.
-              </span>
-            </h2>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+				<aside className="rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm backdrop-blur-sm">
+					<h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+						Focus areas
+					</h2>
+					<ul className="mt-4 space-y-4 text-sm leading-6 text-muted-foreground">
+						<li>
+							<span className="font-medium text-foreground">
+								Distributed systems:
+							</span>{" "}
+							event-driven services, data pipelines, and production
+							observability.
+						</li>
+						<li>
+							<span className="font-medium text-foreground">
+								Frontend delivery:
+							</span>{" "}
+							type-safe React applications with accessible, maintainable UI
+							systems.
+						</li>
+						<li>
+							<span className="font-medium text-foreground">Team impact:</span>{" "}
+							mentorship, review culture, and pragmatic engineering standards.
+						</li>
+					</ul>
+				</aside>
+			</div>
+		</section>
+	);
 }
-

@@ -1,93 +1,91 @@
 export interface Project {
-  id: string
-  title: string
-  description: string
-  tags: string[]
-  detailedContent: string
-  githubUrl?: string
+	id: string;
+	title: string;
+	description: string;
+	tags: string[];
+	detailedContent: string;
+	githubUrl?: string;
 }
 
 export const projects: Project[] = [
-  {
-    id: 'utilifeed-event-system',
-    title: 'Utilifeed Event System',
-    description:
-      'Architected a scalable, Kafka-based event system to ingest live sensors for 1,000+ buildings.',
-    tags: ['Python', 'Golang', 'gRPC', 'Kafka', 'Distributed Systems'],
-    detailedContent: `
+	{
+		id: "utilifeed-event-system",
+		title: "Utilifeed Event System",
+		description:
+			"Designed a Kafka-based event platform for live sensor ingestion across more than 1,000 buildings.",
+		tags: ["Python", "Golang", "gRPC", "Kafka", "Distributed Systems"],
+		detailedContent: `
 ## Challenge
-Building a real-time event ingestion pipeline to handle sensor data from over 1,000 buildings, ensuring high throughput, fault tolerance, and horizontal scalability.
+Build a real-time ingestion pipeline for sensor data from over 1,000 buildings while keeping throughput high, latency low, and operations manageable.
 
 ## Solution
-Designed and implemented a distributed event-driven architecture using Apache Kafka as the backbone, with Python consumers and producers interfacing with a high-performance Golang data layer via gRPC.
+I designed and implemented a distributed, event-driven architecture with Apache Kafka at the center. Python services handled ingest and processing workflows, while a high-performance Golang layer exposed gRPC interfaces for data routing and enrichment.
 
 ### Key Technical Decisions
-- **Event Streaming**: Kafka topics organized by building clusters for optimal partitioning
-- **Python Microservices**: Event consumers and producers with graceful shutdown handling
-- **Golang Data Layer**: High-performance gRPC service for efficient data processing and routing
-- **Schema Registry**: Avro schemas for backward-compatible event evolution
-- **Observability**: Distributed tracing with OpenTelemetry and metrics dashboards in Grafana
+- **Event Streaming**: Kafka topics grouped by building clusters for clean partitioning and consumer scaling
+- **Python Services**: Producers and consumers with graceful shutdown and retry-aware processing
+- **Golang Data Layer**: gRPC services for high-throughput routing and transformation
+- **Schema Management**: Avro schemas for safer event evolution across teams
+- **Observability**: OpenTelemetry traces and Grafana dashboards for day-to-day operations
 
 ## Impact
-- Processing **millions of events per day** with sub-second latency
-- Zero data loss during deployments using Kafka's offset management
-- Reduced operational overhead by xx% (honestly, who knows) through automation and monitoring
+- Processing **millions of events per day** with sub-second latency targets
+- Reliable deployments with offset-aware rollout procedures
+- Lower support load through better monitoring and alerting
 `,
-    githubUrl: undefined,
-  },
-  {
-    id: '4tb-database-migration',
-    title: '4TB Database Migration',
-    description:
-      'Orchestrated a zero-downtime migration from AWS RDS to self-managed infrastructure, cutting costs and improving latency.',
-    tags: ['PostgreSQL', 'AWS', 'Terraform'],
-    detailedContent: `
+		githubUrl: undefined,
+	},
+	{
+		id: "4tb-database-migration",
+		title: "4TB Database Migration",
+		description:
+			"Led a zero-downtime migration from AWS RDS to self-managed PostgreSQL to reduce cost and improve latency.",
+		tags: ["PostgreSQL", "AWS", "Terraform"],
+		detailedContent: `
 ## Challenge
-Migrate a 4TB production PostgreSQL database from AWS RDS to self-managed infrastructure without downtime or data loss, while reducing monthly cloud costs.
+Migrate a 4TB production PostgreSQL database from AWS RDS to self-managed infrastructure without downtime or data loss.
 
 ## Solution
-Executed a phased migration strategy using logical replication, infrastructure-as-code, and extensive testing to ensure a seamless transition.
+I planned and executed a phased migration using logical replication, infrastructure-as-code, and repeated dress rehearsals before cutover.
 
 ### Key Technical Decisions
-- **Logical Replication**: Used PostgreSQL's native replication to sync data in real-time
-- **Infrastructure as Code**: Terraform modules for provisioning EC2 instances, EBS volumes, and networking
-- **Cutover Strategy**: Blue-green deployment pattern with automated DNS failover
-- **Performance Tuning**: Optimized PostgreSQL config for the new hardware (shared_buffers, work_mem, etc.)
+- **Logical Replication**: PostgreSQL native replication kept source and target synchronized in near real time
+- **Infrastructure as Code**: Terraform modules provisioned compute, storage, and networking consistently
+- **Cutover Strategy**: Blue-green rollout with automated DNS failover and rollback checks
+- **Performance Tuning**: PostgreSQL configuration tuned for target hardware and TimescaleDB workloads
 
 ## Impact
-- **Zero downtime** during the cutover window
-- Full automation enabling repeatable disaster recovery procedures
-- Improved database performance and reliability, by running TimescaleDB on the new hardware
+- **Zero downtime** during cutover
+- Repeatable runbooks for disaster recovery and future migrations
+- Better query performance and lower monthly operating costs
 `,
-    githubUrl: undefined,
-  },
-  {
-    id: 'smart-home-mirror',
-    title: 'Smart Home Smart Mirror',
-    description:
-      'A full-featured smart mirror integrating real-time transit data, calendar events, weather, and home automation.',
-    tags: ['Python', 'Home Assistant', 'Google Calendar API', 'IoT'],
-    detailedContent: `
+		githubUrl: undefined,
+	},
+	{
+		id: "smart-home-mirror",
+		title: "Smart Home Smart Mirror",
+		description:
+			"Built a smart mirror experience that combines transit, calendar, weather, and home automation data.",
+		tags: ["Python", "Home Assistant", "Google Calendar API", "IoT"],
+		detailedContent: `
 ## Challenge
-Create an intelligent information hub that seamlessly integrates home automation, personal scheduling, and real-time data into a single, glanceable interface.
+Create a glanceable daily dashboard that combines personal scheduling, live transit, and home automation into one interface.
 
 ## Solution
-Built a custom smart mirror powered by Home Assistant, featuring a completely rewritten Västtrafik integration and multiple data sources for a comprehensive daily overview.
+I built a custom Home Assistant-driven mirror and rewrote the Västtrafik integration to modern async patterns and newer Home Assistant UI conventions.
 
 ### Key Technical Decisions
-- **Västtrafik Integration Rewrite**: Modernized entire integration to async/await patterns, migrated to new Home Assistant UI framework, and added support for future departure tracking
-- **Google Calendar Integration**: Real-time daily summary synced via Google Calendar API
-- **Weather Service**: Live weather forecasts with visual indicators
-- **Shopping Lists**: Synchronized shopping lists from Home Assistant
-- **Notifications Hub**: Centralized notification system for household updates
+- **Transit Integration Rewrite**: Updated async architecture and added future departure tracking
+- **Calendar Sync**: Daily agenda from Google Calendar API
+- **Weather Module**: Live forecasts with readable status indicators
+- **Household Data**: Shared shopping list and home notifications in one view
+- **Extensibility**: Modular cards for quick iteration and new integrations
 
 ## Impact
-- **Seamless morning routine** with all critical information in one place
-- **2,000+ active installations** of the improved Västtrafik integration in the Home Assistant community
-- Reduced phone checking by 80% during morning routines
-- Open-source contributions benefiting thousands of Swedish smart home enthusiasts
+- A smoother morning routine with key information in one place
+- **2,000+ active installations** of the improved Västtrafik integration
+- Open-source contributions used by the Swedish Home Assistant community
 `,
-    githubUrl: 'https://github.com/RHeynsZA',
-  },
-]
-
+		githubUrl: "https://github.com/RHeynsZA",
+	},
+];
