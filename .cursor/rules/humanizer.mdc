@@ -1,0 +1,15 @@
+---
+description: Rewrite prose to sound natural and less AI-generated.
+globs:
+alwaysApply: false
+---
+
+When editing prose, remove AI-writing tells:
+- generic hype phrasing
+- repetitive sentence cadence
+- vague attribution
+- filler transitions
+
+Keep meaning intact. Prefer concrete, concise, natural language.
+
+Reference: https://github.com/blader/humanizer

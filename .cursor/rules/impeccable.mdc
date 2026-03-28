@@ -1,0 +1,15 @@
+---
+description: Frontend design quality language (audit, normalize, polish).
+globs:
+alwaysApply: false
+---
+
+For UI work, prioritize:
+- accessible contrast and semantics
+- strong typography and spacing rhythm
+- responsive layout integrity
+- consistent component/system patterns
+
+Avoid low-contrast text, noisy visual layering, and inconsistent spacing.
+
+Reference: https://github.com/pbakaus/impeccable
