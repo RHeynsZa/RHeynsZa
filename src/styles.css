@@ -133,33 +133,28 @@ code {
     @apply border-border outline-ring/50;
   }
   
-  /* Force dark mode by adding the class to html element via JavaScript */
   html {
-    color-scheme: dark;
+    color-scheme: light;
+    scroll-behavior: smooth;
   }
   
   body {
     @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at 10% 10%, color-mix(in oklch, var(--primary) 14%, transparent), transparent 28%),
+      radial-gradient(circle at 100% 0%, color-mix(in oklch, var(--accent) 12%, transparent), transparent 35%);
   }
   
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Better text rendering */
   body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Custom transitions for hover states */
   a, button {
     @apply transition-colors duration-200;
   }
   
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -176,7 +171,6 @@ code {
     @apply bg-primary/50;
   }
   
-  /* Selection color */
   ::selection {
     @apply bg-primary/30 text-foreground;
   }
@@ -235,5 +229,21 @@ code {
   
   .delay-700 {
     animation-delay: 700ms;
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-24;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold tracking-tight text-foreground md:text-4xl;
+  }
+
+  .section-subheading {
+    @apply mt-4 max-w-3xl text-base leading-7 text-muted-foreground md:text-lg;
   }
 }
