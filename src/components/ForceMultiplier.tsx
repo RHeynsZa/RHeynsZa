@@ -34,13 +34,14 @@ const impactItems = [
 
 export function ForceMultiplier() {
 	return (
-		<section className="border-b border-border/60 px-4 py-20">
-			<div className="mx-auto w-full max-w-6xl">
+		<section
+			data-section="impact"
+			className="section-shell scroll-mt-28 py-16 pb-20"
+		>
+			<div className="surface overflow-hidden border-primary/18 bg-gradient-to-br from-card via-card to-primary/6 p-7 md:p-9">
 				<div className="mb-10 max-w-3xl">
-					<h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-						Beyond code delivery
-					</h2>
-					<p className="mt-3 text-base leading-7 text-muted-foreground md:text-lg">
+					<h2 className="section-title">Beyond code delivery</h2>
+					<p className="section-intro">
 						The best results come from healthy engineering habits, not heroics.
 					</p>
 				</div>
@@ -51,17 +52,17 @@ export function ForceMultiplier() {
 						return (
 							<Card
 								key={item.id}
-								className="h-full border border-border/80 bg-card/80 shadow-sm"
+								className="h-full gap-0 border-border/70 bg-background/92 p-0 shadow-none"
 							>
-								<CardHeader>
+								<CardHeader className="pb-4">
 									<div className="flex items-center gap-3">
-										<div className="rounded-lg border border-primary/20 bg-primary/10 p-2 text-primary">
-											<Icon className="h-5 w-5" />
+										<div className="rounded-xl border border-primary/18 bg-primary/12 p-2.5 text-primary">
+											<Icon className="size-5" />
 										</div>
 										<CardTitle className="text-lg">{item.title}</CardTitle>
 									</div>
 								</CardHeader>
-								<CardContent>
+								<CardContent className="pb-6">
 									<p className="text-sm leading-6 text-muted-foreground">
 										{item.description}
 									</p>
