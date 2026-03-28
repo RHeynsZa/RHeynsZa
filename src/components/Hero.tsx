@@ -14,27 +14,32 @@ export function Hero() {
 	return (
 		<section
 			data-section="home"
-			className="relative border-b border-border/60 px-4 py-24 md:py-32"
+			className="relative overflow-hidden border-b border-border/70 pt-24 md:pt-28"
 		>
-			<div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-				<div className="space-y-7">
-					<p className="inline-flex rounded-full border border-border/80 bg-card px-4 py-1.5 text-sm text-muted-foreground">
+			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,color-mix(in_oklch,var(--primary)_20%,transparent),transparent_45%)]" />
+			<div className="section-shell section-padding relative grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+				<div className="space-y-8">
+					<p className="inline-flex rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
 						Senior Full-Stack Engineer · Gothenburg, Sweden
 					</p>
 
-					<div className="space-y-5">
-						<h1 className="text-4xl font-semibold leading-tight tracking-tight text-balance md:text-6xl">
+					<div className="space-y-6">
+						<h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-balance md:text-6xl">
 							I build reliable systems and practical products teams can grow
 							with.
 						</h1>
-						<p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
+						<p className="max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
 							I’m Ruan Heyns. I design distributed backends, ship type-safe
 							frontends, and help teams build habits that keep releases calm.
 						</p>
 					</div>
 
-					<div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-						<Button size="lg" className="group" onClick={scrollToProjects}>
+					<div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+						<Button
+							size="lg"
+							className="group rounded-full px-6 shadow-sm"
+							onClick={scrollToProjects}
+						>
 							View selected work
 							<ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-0.5" />
 						</Button>
@@ -45,14 +50,14 @@ export function Hero() {
 							rel="noopener noreferrer"
 							className="inline-flex"
 						>
-							<Button variant="outline" size="lg">
+							<Button variant="outline" size="lg" className="rounded-full px-6">
 								<Github className="mr-2 h-4 w-4" />
 								GitHub
 							</Button>
 						</a>
 
 						<a href="mailto:rheynsza@gmail.com" className="inline-flex">
-							<Button variant="ghost" size="lg">
+							<Button variant="ghost" size="lg" className="rounded-full px-5">
 								<Mail className="mr-2 h-4 w-4" />
 								Contact
 							</Button>
@@ -60,11 +65,11 @@ export function Hero() {
 					</div>
 				</div>
 
-				<aside className="rounded-2xl border border-border/70 bg-card/70 p-6 shadow-sm backdrop-blur-sm">
+				<aside className="rounded-3xl border border-border/80 bg-card/90 p-7 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.35)]">
 					<h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
 						Focus areas
 					</h2>
-					<ul className="mt-4 space-y-4 text-sm leading-6 text-muted-foreground">
+					<ul className="mt-5 space-y-5 text-sm leading-7 text-muted-foreground">
 						<li>
 							<span className="font-medium text-foreground">
 								Distributed systems:

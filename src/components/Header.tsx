@@ -13,21 +13,24 @@ export default function Header() {
 	};
 
 	return (
-		<header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
-			<nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
+		<header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-xl">
+			<nav className="section-shell flex h-16 items-center justify-between">
 				<Link
 					to="/"
 					className="flex items-center gap-2 text-base font-semibold hover:text-primary"
 				>
-					<Code2 className="h-5 w-5 text-primary" />
+					<span className="rounded-md bg-primary/10 p-1.5 text-primary">
+						<Code2 className="h-4 w-4" />
+					</span>
 					<span>Ruan Heyns</span>
 				</Link>
 
-				<div className="flex items-center gap-1 sm:gap-2">
+				<div className="flex items-center gap-1 rounded-full border border-border/80 bg-card/80 p-1 shadow-sm sm:gap-2">
 					<Button
 						variant="ghost"
 						size="sm"
 						onClick={() => scrollToSection("home")}
+						className="rounded-full"
 					>
 						Home
 					</Button>
@@ -35,6 +38,7 @@ export default function Header() {
 						variant="ghost"
 						size="sm"
 						onClick={() => scrollToSection("projects")}
+						className="rounded-full"
 					>
 						Projects
 					</Button>
@@ -42,6 +46,7 @@ export default function Header() {
 						variant="ghost"
 						size="sm"
 						onClick={() => scrollToSection("stack")}
+						className="rounded-full"
 					>
 						Stack
 					</Button>
