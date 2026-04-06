@@ -34,7 +34,7 @@ const impactItems = [
 
 export function ForceMultiplier() {
 	return (
-		<section className="section-padding border-b border-border/60">
+		<section className="section-padding border-b border-border/50">
 			<div className="section-shell">
 				<div className="mb-12 max-w-3xl">
 					<h2 className="section-heading">Beyond code delivery</h2>
@@ -43,24 +43,26 @@ export function ForceMultiplier() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+				<div className="grid grid-cols-1 gap-5 md:grid-cols-2">
 					{impactItems.map((item) => {
 						const Icon = item.icon;
 						return (
 							<Card
 								key={item.id}
-								className="h-full rounded-2xl border border-border/80 bg-card shadow-[0_12px_34px_-26px_rgba(0,0,0,0.45)]"
+								className="h-full rounded-xl border border-border bg-white shadow-none"
 							>
-								<CardHeader>
+								<CardHeader className="pb-3">
 									<div className="flex items-center gap-3">
-										<div className="rounded-xl border border-primary/20 bg-primary/10 p-2.5 text-primary">
-											<Icon className="h-5 w-5" />
+										<div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-muted/50 text-foreground/70">
+											<Icon className="h-4 w-4" />
 										</div>
-										<CardTitle className="text-lg">{item.title}</CardTitle>
+										<CardTitle className="text-base font-semibold text-foreground">
+											{item.title}
+										</CardTitle>
 									</div>
 								</CardHeader>
 								<CardContent>
-									<p className="text-sm leading-6 text-muted-foreground">
+									<p className="text-sm leading-relaxed text-muted-foreground">
 										{item.description}
 									</p>
 								</CardContent>

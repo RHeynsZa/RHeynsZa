@@ -12,7 +12,7 @@ export function TechStack() {
 	return (
 		<section
 			data-section="stack"
-			className="section-padding border-y border-border/60 bg-muted/20"
+			className="section-padding border-y border-border/50 bg-muted/20"
 		>
 			<div className="section-shell">
 				<div className="mb-12 max-w-3xl">
@@ -22,27 +22,27 @@ export function TechStack() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+				<div className="grid grid-cols-1 gap-5 md:grid-cols-3">
 					{techStack.map((category) => (
 						<Card
 							key={category.title}
-							className="h-full rounded-2xl border border-border/80 bg-card shadow-[0_10px_30px_-24px_rgba(0,0,0,0.45)]"
+							className="h-full rounded-xl border border-border bg-white shadow-none"
 						>
-							<CardHeader>
-								<CardTitle className="text-xl leading-7">
+							<CardHeader className="pb-3">
+								<CardTitle className="text-base font-semibold text-foreground">
 									{category.title}
 								</CardTitle>
-								<CardDescription className="text-sm leading-6">
+								<CardDescription className="text-sm leading-relaxed text-muted-foreground">
 									{category.description}
 								</CardDescription>
 							</CardHeader>
 							<CardContent>
-								<div className="flex flex-wrap gap-2">
+								<div className="flex flex-wrap gap-1.5">
 									{category.technologies.map((tech) => (
 										<Badge
 											key={tech.name}
 											variant={tech.variant}
-											className="px-3 py-1 text-xs"
+											className="rounded-md px-2.5 py-1 text-xs font-medium"
 										>
 											{tech.name}
 										</Badge>
