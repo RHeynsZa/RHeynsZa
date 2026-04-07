@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -36,37 +35,40 @@ export function FeaturedProjects() {
 						</p>
 					</div>
 
-					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+					<div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
 						{projects.map((project) => (
 							<Card
 								key={project.id}
-								className="group flex h-full cursor-pointer flex-col rounded-2xl border border-border/80 bg-card shadow-[0_10px_35px_-28px_rgba(0,0,0,0.5)] transition hover:-translate-y-1 hover:border-primary/40"
+								className="group flex h-full cursor-pointer flex-col rounded-xl border border-border bg-white shadow-none transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_4px_20px_-8px_rgba(0,0,0,0.12)]"
 								onClick={() => handleProjectClick(project)}
 							>
-								<CardHeader className="pb-4">
-									<CardTitle className="text-xl leading-7">
+								<CardHeader className="pb-3">
+									<CardTitle className="text-base font-semibold leading-snug text-foreground">
 										{project.title}
 									</CardTitle>
-									<CardDescription className="pt-2 text-sm leading-6 text-muted-foreground">
+									<CardDescription className="pt-1.5 text-sm leading-relaxed text-muted-foreground">
 										{project.description}
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="mt-auto pt-0">
-									<div className="mb-5 flex flex-wrap gap-2">
+									<div className="mb-4 flex flex-wrap gap-1.5">
 										{project.tags.map((tag) => (
-											<Badge key={tag} variant="outline" className="text-xs">
+											<Badge
+												key={tag}
+												variant="secondary"
+												className="rounded-md border-0 bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+											>
 												{tag}
 											</Badge>
 										))}
 									</div>
-									<Button
-										variant="ghost"
-										size="sm"
-										className="px-0 text-primary hover:text-primary/80"
+									<button
+										type="button"
+										className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
 									>
 										Read case study
-										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1.5" />
-									</Button>
+										<ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+									</button>
 								</CardContent>
 							</Card>
 						))}
